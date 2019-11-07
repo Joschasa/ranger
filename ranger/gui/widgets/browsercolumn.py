@@ -227,10 +227,7 @@ class BrowserColumn(Pager):  # pylint: disable=too-many-instance-attributes
     def _draw_directory(  # pylint: disable=too-many-locals,too-many-branches,too-many-statements
             self):
         """Draw the contents of a directory"""
-        if self.image:
-            self.image = None
-            self.need_clear_image = True
-            Pager.clear_image(self)
+        Pager.close(self)
 
         if self.level > 0 and not self.settings.preview_directories:
             return
